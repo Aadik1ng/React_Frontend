@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# React Frontend for Sentiment Analysis
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend application for the sentiment analysis tool. It allows users to sign up, log in, and upload files for sentiment analysis using a FastAPI backend.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **User Authentication**: Users can sign up and log in to the platform.
+- **File Upload**: Users can upload files for sentiment analysis.
+- **Sentiment Analysis Results**: The app displays results, including positive, neutral, and negative sentiment counts, along with bar and pie charts.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Clone the Repository
+git clone https://github.com/your-username/react-frontend.git cd react-frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### 2. Install Dependencies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure you have [Node.js](https://nodejs.org) installed. Then, install the required dependencies by running:
 
-### `npm run build`
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Run the Application
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To start the development server, run:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm start
 
-### `npm run eject`
+This will launch the application at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Folder Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `public/`: Contains static files like `index.html` and icons.
+- `src/`: Contains the source code for the application.
+  - `App.js`: Main application file with routing logic.
+  - `Login.js`: Component for user login.
+  - `Signup.js`: Component for user signup.
+  - `SentimentUpload.js`: Component for uploading files and displaying sentiment analysis results.
+  - `Navbar.js`: Navigation bar component.
+  - `config.js`: API URL configurations.
+  - `styles.css`: Global styles for the app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Environment Variables
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The app makes use of a FastAPI backend for user authentication and sentiment analysis. The backend API URLs are set in `src/config.js`:
 
-## Learn More
+- **Login API URL**: `https://fastapibackend-production-8d1b.up.railway.app/login`
+- **Signup API URL**: `https://fastapibackend-production-8d1b.up.railway.app/signup`
+- **Sentiment API URL**: `https://fastapibackend-production-8d1b.up.railway.app/analyze_sentiment`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Make sure to adjust these URLs as per your backend deployment if needed.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+### 1. Signup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Navigate to the signup page to create an account.
+- Enter your email and password, and submit the form.
+- You will be redirected to the login page after a successful signup.
 
-### Analyzing the Bundle Size
+### 2. Login
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Log in using your credentials (email and password).
+- Once logged in, you'll be redirected to the file upload page for sentiment analysis.
 
-### Making a Progressive Web App
+### 3. Sentiment Analysis
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Upload a file (e.g., text or CSV) for sentiment analysis.
+- The app will display the sentiment counts (positive, neutral, and negative).
+- Additionally, bar and pie charts will be displayed for visual representation of the sentiment analysis.
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature-name`.
+3. Make your changes and commit them: `git commit -am 'Add new feature'`.
+4. Push to the branch: `git push origin feature/your-feature-name`.
+5. Create a new Pull Request.
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### `npm run build` fails to minify
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The sentiment analysis API is powered by a FastAPI backend.
+- Charts are generated using relevant libraries (details can be found in the backend code).
+
+
+
