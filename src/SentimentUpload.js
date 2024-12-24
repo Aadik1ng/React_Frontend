@@ -26,7 +26,7 @@ function SentimentUpload() {
       const response = await fetch('https://fastapibackend-production-8d1b.up.railway.app/analyze_sentiment', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${auth.token}`
+          'Authorization': `Bearer ${auth.token}`,
         },
         body: formData,
       });
@@ -51,14 +51,30 @@ function SentimentUpload() {
         <input type="file" onChange={handleFileChange} required />
         <button type="submit">Upload</button>
       </form>
+
       {result && (
         <div>
           <h3>Sentiment Analysis Result</h3>
           <p>Positive: {result.positive_count}</p>
           <p>Neutral: {result.neutral_count}</p>
           <p>Negative: {result.negative_count}</p>
-          <img src={result.bar_chart_url} alt="Bar Chart" />
-          <img src={result.pie_chart_url} alt="Pie Chart" />
+          
+          {/* Display bar chart */}
+          {result.bar_chart_url && (
+            <div>
+              <h4>Bar Chart</h4>
+              <img src={result.bar_chart_url} alt="Bar Chart" />
+            </div>
+          )}
+
+          {/* Display pie chart */}
+          {result.pie_chart_url && (
+            <div>
+              <h4>Pie Chart</h4>
+              <img src={result.pie_chart_url} alt="Pie Chart" />
+            </div>
+          )}
+
         </div>
       )}
     </div>
